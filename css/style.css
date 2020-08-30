@@ -1,1 +1,1 @@
-*{margin:0;padding:0;text-decoration:none;list-style:none;box-sizing:border-box}
+header,form{min-height:20vh;display:flex;justify-content:center;align-items:center}form input,form button{background:#fff;font-size:2rem;padding:.5rem;border:none}*{margin:0;padding:0;text-decoration:none;list-style:none;box-sizing:border-box}body{background:linear-gradient(120deg, #e2c35d, #d88771);color:#fff;font-family:"Poppins",sans-serif;min-height:100vh}header{font-size:1.5rem}form button{color:#d88771;cursor:pointer;transition:all .3s ease}form button:hover{background:#d88771;color:#fff}
