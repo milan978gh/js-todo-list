@@ -1,52 +1,134 @@
 $font-fam: "Poppins", sans-serif;
-%hed-form{
+%hed-form {
     min-height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-%inp-btn{
+%inp-btn {
     background: #fff;
     font-size: 2rem;
-    padding: .5rem;
+    padding: 0.5rem;
     border: none;
 }
-
+%comp-tras {
+    color: #fff;
+    background: #ff6f47;
+    font-size: 1rem;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
 
 // styling
-*{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
 }
-body{
+body {
     background: linear-gradient(120deg, #e2c35d, #d88771);
     color: #fff;
     font-family: $font-fam;
     min-height: 100vh;
 }
-header{
+header {
     @extend %hed-form;
     font-size: 1.5rem;
-    
 }
-form{
+form {
     @extend %hed-form;
 
-    input{
+    input {
         @extend %inp-btn;
     }
-    button{
+    button {
         @extend %inp-btn;
         color: #d88771;
         cursor: pointer;
-        transition: all .3s ease;
+        transition: all 0.3s ease;
 
-        &:hover{
+        &:hover {
             background: #d88771;
             color: #fff;
+        }
+    }
+    .select {
+        margin: 1rem;
+        position: relative;
+        overflow: hidden;
+
+        &::after{
+            content: "\25bc";
+            position: absolute;
+            background: #ff6f47;
+            top: 0;
+            right: 0;
+            padding: 1rem;
+            pointer-events: none;
+        }
+
+        select {
+            appearance: none;
+            outline: none;
+            border: none;
+            color: #ff6f47;
+            width: 10rem;
+            padding: 1rem;
+            cursor: pointer;
+        }
+    }
+}
+.todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .todo-list {
+        min-width: 30%;
+
+        .todo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #000;
+            background: #fff;
+            margin: 0.5rem;
+            font-size: 1.5rem;
+            transition: all 0.5s ease;
+
+            li {
+                flex: 1;
+            }
+            &-item {
+                padding: 0 0.5rem;
+            }
+            .complete-btn {
+                @extend %comp-tras;
+                background: #49cc49;
+
+                .fa-check {
+                    pointer-events: none;
+                }
+            }
+
+            .trash-btn {
+                @extend %comp-tras;
+
+                .fa-trash {
+                    pointer-events: none;
+                }
+            }
+        }
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        .fall {
+            transform: translateY(8rem) rotateZ(20deg);
+            opacity: 0;
         }
     }
 }
