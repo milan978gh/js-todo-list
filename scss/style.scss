@@ -68,6 +68,11 @@ form {
             right: 0;
             padding: 1rem;
             pointer-events: none;
+            transition: all .3s ease;
+        }
+        &:hover::after{
+            background: #fff;
+            color: #ff6f47;
         }
 
         select {
